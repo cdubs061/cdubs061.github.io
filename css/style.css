@@ -1,0 +1,86 @@
+img {
+    border-radius: 1000px;
+}
+
+h1 {
+    font-size: 45px;
+}
+
+p {
+    font-size: 20px;
+}
+
+#headshot {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+}
+
+#github {
+    height: 50px;
+    width: 50px;
+}
+
+#linkedin {
+    height: 50px;
+    width: 50px;
+}
+
+#email {
+    height: 50px;
+    width: 50px;
+}
+
+.main-body {
+    justify-content: space-around;
+}
+
+.profile {
+    padding-top: 75px;
+    text-align: center;
+    width: 33%;
+    height: auto;
+}
+
+.projects {
+    width: 33%;
+    height: 300px;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.bottom-bar {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    justify-content: space-between;
+}
+
+.bar-item {
+    padding: 20px;
+}
+
+.about {
+    text-align: center;
+}
+
+p.about {
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.icon {
+    height: 50px;
+    width: 50px;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
