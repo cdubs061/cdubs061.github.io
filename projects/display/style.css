@@ -37,3 +37,23 @@ footer {
     padding: 20px;
     text-align: center;
 }
+
+.button {
+    position: fixed; 
+    top: 10px;
+    left: 10px;
+    opacity: 0.7;
+    color: green;
+    border: solid;
+    border-radius: 20px;
+    border-color: green;
+    padding: 10px 20px; 
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: green;
+    color: white;
+}

@@ -50,6 +50,10 @@ p {
     text-align: center;
 }
 
+.projects-text {
+    font-size: 15px;
+}
+
 .bottom-bar {
     position: fixed;
     bottom: 0px;
@@ -61,11 +65,17 @@ p {
     padding: 20px;
 }
 
-.about {
+.heading {
+    padding-top: 40px;
     text-align: center;
+    font-size: 50px;
 }
 
-p.about {
+.subheading {
+    padding-left: 100px;
+}
+
+.paragraph {
     padding-left: 100px;
     padding-right: 100px;
 }
