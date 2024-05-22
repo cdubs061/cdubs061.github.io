@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>My Data Structures</h1>
+    </header>
+
+    <a class="button" href="../../index.html">Go Back To Homepage</a>
+
+    <nav>
+        <ul>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#description">Description</a></li>
+            <li><a href="#images">Images</a></li>
+            <li><a href="#video">Video</a></li>
+            <li><a href="#future">Future Development</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="introduction">
+            <h2>Introduction</h2>
+            <!-- Introduction content goes here -->
+            <p>
+              The goal of this project was to deepen my understanding of
+              both data structures and object oriented programming features.
+              The project helped me to understand data structures more 
+              intimately and their strengths and weaknesses. The object 
+              oriented topics I learned are
+            </p>
+            <ol>
+              <li> 
+                Encapulation: Through private members with getters
+                and setters.
+              </li>
+              <li>
+                Type Safety and Reusability: Through generics.
+              </li>
+              <li>
+                Objects: Through the creation of instances of the data
+                structures.
+              </li>
+            </ol>
+        </section>
+
+        <section id="description">
+            <h2>Description</h2>
+            <!-- Description content goes here -->
+            <p>
+              The Project is a implementation of the most important/popular
+              Data Structures. This is not meant to be used in place of the
+              ones that come with whatever language you are using. This was 
+              made purly for educational use. Each of the Data Structures
+              also only has the most important functionality there is probably
+              lots of necessary functionality missing.
+            </p>
+        </section>
+
+        <section id="images">
+            <h2>Images</h2>
+            <div class="help">
+            <pre><code>
+namespace MyDataStructures;
+
+public class TreeNode&lt;T&gt;
+{
+	private T _val;
+	private TreeNode&lt;T&gt;? _left;
+	private TreeNode&lt;T&gt;? _right;
+
+    public TreeNode&lt;T&gt; Right
+    {
+        get { return _right; }
+        set { _right = value; }
+    }
+
+    public TreeNode&lt;T&gt; Left
+    {
+        get { return _left; }
+        set { _left = value; }
+    }
+
+    public T Value
+    {
+        get { return _val; }
+        set { _val = value; }
+    }
+
+	public TreeNode(T val)
+	{
+		_val = val;
+		_left = null;
+		_right = null;
+	}
+}
+            </code></pre>
+            <pre><code>
+namespace MyDataStructures;
+
+public class BinarySearchTree&lt;T&gt; where T : IComparable&lt;T&gt;
+{
+	private TreeNode&lt;T&gt; _root;
+    private Comparer&lt;T&gt; comparer;
+
+    public BinarySearchTree(Comparer&lt;T&gt; comparer = null)
+    {
+        this.comparer = comparer ?? Comparer&lt;T&gt;.Default;
+    }
+
+    private void AddNode(T val)
+    {
+        _root = AddNode(_root, val);
+    }
+
+    public TreeNode&lt;T&gt; AddNode(TreeNode&lt;T&gt; node, T val)
+    {
+        if (node == null)
+        {
+            node = new TreeNode&lt;T&gt;(val);
+            return node;
+        }
+
+        int compare = val.CompareTo(node.Value);
+        if (compare < 0)
+        {
+            node.Left = AddNode(node.Left, val);
+        }
+        else if (compare > 0)
+        {
+            node.Right = AddNode(node.Right, val);
+        } 
+        return node;
+    }
+
+    private void DeleteNode(T val)
+    {
+        _root = DeleteNode(_root, val);
+    }
+
+    public TreeNode&lt;T&gt; DeleteNode(TreeNode&lt;T&gt; node, T val)
+    {
+        if (node == null)
+        {
+            return null;
+        }
+
+        int compare = val.CompareTo(node.Value);
+        if (compare < 0)
+        {
+            node.Left = DeleteNode(node.Left, val);
+        }
+        else if (compare > 0)
+        {
+            node.Right = DeleteNode(node.Right, val);
+        }
+        else
+        {
+            if (node.Left != null && node.Right != null)
+            {
+                TreeNode&lt;T&gt; successor = Min(node.Right);
+                node.Value = successor.Value;
+                node.Right = DeleteNode(node.Right, successor.Value);
+            }
+            else
+            {
+                node = (node.Left != null) ? node.Left : node.Right;
+            }
+        }
+        return node;
+    }
+
+    public bool Search(T val)
+    {
+        TreeNode&lt;T&gt; node = Search(_root, val);
+        return node != null; 
+    }
+
+    private TreeNode&lt;T&gt; Search(TreeNode&lt;T&gt; node, T val)
+    {
+        if (node == null)
+        {
+            return null;
+        }
+
+        int compare = val.CompareTo(node.Value);
+        if (compare < 0)
+        {
+            return Search(node.Left, val);
+        }
+        else if (compare > 0)
+        {
+            return Search(node.Right, val);
+        }
+        return node;
+    }
+
+    public int Height()
+    {
+        return Height(_root);
+    }
+
+    private int Height(TreeNode&lt;T&gt; node)
+    {
+        int left = 0;
+        int right = 0;
+        if (node == null)
+        {
+            return 0;
+        }
+        else
+        {
+            left = Height(node.Left);
+            right = Height(node.Right);
+        }
+
+        if (left > right)
+        {
+            return left + 1;
+        }
+        return right + 1;
+    }
+    
+    public void LevelOrderTraversal()
+    {
+        Queue<TreeNode&lt;T&gt;> queue = new Queue<TreeNode&lt;T&gt;>();
+        queue.Push(_root);
+
+        while (queue.Count != 0)
+        {
+            TreeNode&lt;T&gt; node = queue.Pop();
+            Console.Write(node + ", ");
+
+            if (node.Left != null)
+            {
+                queue.Push(node.Left);
+            }
+            
+            if (node.Right != null)
+            {
+                queue.Push(node.Right);
+            }
+        }
+    }
+
+    private TreeNode&lt;T&gt; Min(TreeNode&lt;T&gt; node)
+    {
+        if (node == null)
+        {
+            return null;
+        }
+
+        while (node.Left != null)
+        {
+            node = node.Left;
+        }
+
+        return node;
+    }
+}
+
+            </code></pre>
+            </div>
+        </section>
+
+        <section id="video">
+            <h2>Video</h2>
+            <!-- Video content goes here -->
+            <video width="320" height="640" controls>
+                <source src="video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+
+        <section id="future">
+            <h2>Future Development</h2>
+
+            <p>
+             In the Future I would like to add more obscure Data Structures
+             and I would like to add different implementations to the current
+             Data Structures.
+            </p>
+        </section>
+    </main>
+</body>
+</html>
