@@ -10,6 +10,20 @@ p {
     font-size: 20px;
 }
 
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    margin-left: 75px;
+    padding: 0;
+}
+
+body {
+    padding-bottom: 75px;
+}
+
 #headshot {
     width: 400px;
     height: 400px;
@@ -66,18 +80,25 @@ p {
 }
 
 .heading {
+    padding-left: 75px;
     padding-top: 40px;
-    text-align: center;
+    text-align: left;
     font-size: 50px;
 }
 
-.subheading {
+/* .subheading {
     padding-left: 100px;
-}
+} */
 
 .paragraph {
-    padding-left: 100px;
-    padding-right: 100px;
+    margin-bottom: 20px;
+    margin-left: 75px;
+    margin-right: 75px;
+    border-radius: 10px;
+    padding: 20px;
+    border-width: 20px;
+    border-color: black;
+    background-color: lightgray;
 }
 
 .icon {
@@ -93,4 +114,8 @@ p {
 .flex-column {
     display: flex;
     flex-direction: column;
+}
+
+.hidden {
+    display: none;
 }

@@ -1,105 +1,142 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <div class="flex-row main-body">
-        <div class="flex-column profile">
-            <h1 id="name">Christian <br> Peytavin</h1>
-            <p id="qualifications">
-                Bachelor of Science in Computer Science <br>
-                at Louisiana State University
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>My Portfolio</title>
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <div class="flex-row main-body">
+            <div class="flex-column profile">
+                <h1 id="name">
+                    Christian <br />
+                    Peytavin
+                </h1>
+                <p id="qualifications">
+                    Bachelor of Science in Computer Science <br />
+                    at Louisiana State University
+                </p>
+            </div>
+            <div class="flex-column">
+                <img
+                    id="headshot"
+                    src="./assets/headshot.jpg"
+                    alt="A headshot of Christian"
+                />
+            </div>
+            <div class="flex-column projects">
+                <h2>Projects</h2>
+                <div class="flex-row main-body">
+                    <div class="flex-column">
+                        <a href="projects/display/index.html">
+                            <img class="icon" src="./assets/symphonic.png" />
+                        </a>
+                        <div class="projects-text">
+                            Symphonic <br />
+                            Showdown
+                        </div>
+                    </div>
+                    <div class="flex-column">
+                        <a href="projects/DataStructures/index.html">
+                            <img
+                                class="icon"
+                                src="./assets/DataStructures.png"
+                            />
+                        </a>
+                        <div class="projects-text">
+                            My Data <br />
+                            Structures
+                        </div>
+                    </div>
+                    <img class="hidden" src="./assets/" />
+                </div>
+                <div class="flex-row main-body hidden">
+                    <img src="./assets/" />
+                    <img src="./assets/" />
+                    <img src="./assets/" />
+                </div>
+                <div class="flex-row main-body hidden">
+                    <img src="./assets/" />
+                    <img src="./assets/" />
+                    <img src="./assets/" />
+                </div>
+            </div>
+        </div>
+
+        <div class="flex-column main-body">
+            <div>
+                <div class="heading">About Me</div>
+                <hr />
+            </div>
+            <p class="paragraph">
+                I became interested in software development when a friend from
+                high school wrote software that helped us with homework. This
+                experience inspired me to sign up for a high school class being
+                offered by an organization called Operation Spark. It taught us
+                how to use HTML, CSS, and JavaScript. This is when I developed
+                my passion for programming. After I graduated from high school I
+                immediately knew that I wanted to major in computer science. I
+                chose to minor in robotics to expand future opportunities into
+                more hands-on fields if needed. My dream would be to work for a
+                company that is a household name and contributes to a better
+                future.
             </p>
-        </div>
-        <div class="flex-column">
-            <img id="headshot" src="./assets/headshot.jpg" alt="A headshot of Christian">
-        </div>
-        <div class="flex-column projects">
-            <h2>Projects</h2>
-            <div class="flex-row main-body">
-                <div class="flex-column">
-                    <a href="projects/display/index.html">
-                        <img class="icon" src="./assets/symphonic.png">
-                    </a>
-                    <div class="projects-text">Symphonic <br> Showdown</div>
-                </div>
-                <div class="flex-column">
-                    <a href="projects/DataStructures/index.html">
-                        <img class="icon" src="./assets/DataStructures.png">
-                    </a>
-                    <div class="projects-text">My Data <br> Structures</div>
-                </div>
-                <img src="./assets/">
+
+            <div class="heading">Experience</div>
+
+            <hr />
+
+            <div class="paragraph">
+                <div class="subheading">Hyosung Innovue - Intern</div>
+                <p>
+                    During my internship at Hyosung I was able to work on the
+                    UI/UX of ATMs. We used HTML, CSS, and JavaScript. I was put
+                    on their most high profile project where I helped fix visual
+                    bugs and design issues. I adhered to corporate guidelines,
+                    while also demonstrating my ability to blend aesthetic
+                    design with functional user experience.
+                </p>
             </div>
-            <div class="flex-row main-body">
-                <img src="./assets/">
-                <img src="./assets/">
-                <img src="./assets/">
+
+            <div class="paragraph">
+                <div class="subheading">LSU Research Project</div>
+                <p>
+                    During my time working under Professor Bhattacharya at LSU,
+                    I made a website that communicates with multiple third-party
+                    APIs. This experience taught me the ability to work with
+                    documentation and gain an understanding of authentication
+                    methods. The purpose of this project was to use the APIs to
+                    pull data collected from sensors collecting environmental
+                    data that would be graphed in real time. I made both the
+                    client and server side logic for the web application.
+                </p>
             </div>
-            <div class="flex-row main-body">
-                <img src="./assets/">
-                <img src="./assets/">
-                <img src="./assets/">
+        </div>
+
+        <div class="bottom-bar flex-row">
+            <div class="bar-item">
+                <a href="https://github.com/cdubs061">
+                    <img id="github" src="assets/github.png" alt="github" />
+                </a>
+            </div>
+            <div class="bar-item">
+                <a
+                    href="https://www.linkedin.com/in/christian-peytavin-194574251/"
+                >
+                    <img
+                        id="linkedin"
+                        src="assets/linkedin.png"
+                        alt="linkedin"
+                    />
+                </a>
+            </div>
+            <div class="bar-item">
+                <a href="cdubs06@gmail.com">
+                    <img id="email" src="assets/email.png" alt="email" />
+                </a>
             </div>
         </div>
-    </div>
-
-    <div class="flex-column main-body">
-        <div class="heading">About Me</div>
-        <p class="paragraph">
-            I became interested in software development when a friend from high school
-            wrote software that helped us with homework. This experience inspired me to  sign up 
-            for a high school class being offered by an organization called Operation
-            Spark. It taught us how to use HTML, CSS, and JavaScript. This is when I developed my 
-            passion for programming. After I graduated from high school I immediately knew that I wanted to
-            major in computer science. I chose to minor in robotics to expand future opportunities
-            into more hands-on fields if needed. My dream would be to work for a company that 
-            is a household name and contributes to a better future.
-        </p>
-
-        <div class="heading">Experience</div>
-
-        <div class="subheading">Hyosung Innovue - Intern</div>
-        <p class="paragraph">
-            During my internship at Hyosung I was able to work on the UI/UX of ATMs. We used HTML, CSS,
-            and JavaScript. I was put on their most high profile project where I helped fix visual
-            bugs and design issues. I adhered to corporate guidelines, while also demonstrating my 
-            ability to blend aesthetic design with functional user experience. 
-        </p>
-
-        <div class="subheading">LSU Research Project</div>
-        <p class="paragraph">
-            During my time working under Professor Bhattacharya at LSU, I made a website that 
-            communicates with multiple third-party APIs. This experience taught me the ability to 
-            work with documentation and gain an understanding of authentication methods. The purpose 
-            of this project was to use the APIs to pull data collected from sensors collecting 
-            environmental data that would be graphed in real time. I made both the client and server 
-            side logic for the web application.
-        </p>
-    </div>
-
-    <div class="bottom-bar flex-row">
-        <div class="bar-item">
-            <a href="https://github.com/cdubs061">
-                <img id="github" src="assets/github.png" alt="github">
-            </a>
-        </div>
-        <div class="bar-item">
-            <a href="https://www.linkedin.com/in/christian-peytavin-194574251/">
-                <img id="linkedin" src="assets/linkedin.png" alt="linkedin">
-            </a>
-        </div>
-        <div class="bar-item">
-            <a href="cdubs06@gmail.com">
-                <img id="email" src="assets/email.png" alt="email">
-            </a>
-        </div>
-    </div>
-    <script src="script/script.js"></script>
-</body>
+        <script src="script/script.js"></script>
+    </body>
 </html>
-
